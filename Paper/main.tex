@@ -1,0 +1,744 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{ctex}
+\usepackage{float} %设置图片浮动位置的宏包
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{subfigure} %插入多图时用子图显示的宏包
+\usepackage{makecell}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{indentfirst}
+\usepackage{longtable}
+\usepackage{threeparttable}
+\usepackage{setspace}
+\usepackage{cite}
+\usepackage[numbers,sort]{natbib}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage[titletoc]{appendix}
+\usepackage{nameref}
+\usepackage{fontspec}
+\usepackage{enumitem}
+\usepackage{geometry}
+
+\geometry{a4paper}
+\setmainfont{Times New Roman}
+\pagestyle{plain}
+\linespread{1.6}
+\setlength{\parindent}{2em}
+
+\begin{document}
+\begin{center}
+    \includegraphics[width=0.46\paperwidth]{zju.pdf}  \\
+    \vspace{0.4cm}
+    \huge{Do Corporations Retain Too Much Cash?\\}
+    \LARGE{——Evidence from a Natural Experiment\\}
+    \vspace{0.5cm}
+    \emph{\huge 小组成员\\}
+    \vspace{0.2cm}
+    \LARGE
+    \setlength{\tabcolsep}{5mm}{
+    \begin{tabular}{lll}
+        \vspace{-0.2cm}
+        黄倪远 & 3200101028 & 3200101028@zju.edu.cn\\
+        \vspace{-0.2cm}
+        秦子铉 & 3200102501 & 3200102501@zju.edu.cn\\
+        \vspace{-0.2cm}
+        姚宗庆 & 3200103341 & 3200103341@zju.edu.cn\\
+        \vspace{-0.2cm}
+        张嘉颢 & 3200102640 & 3200102640@zju.edu.cn\\
+    \end{tabular}
+    }
+\end{center}
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{原文回顾}
+\subsection{基本信息与研究背景}
+\indent 2014年，为了激励企业增加投资，促进消费需求，韩国迅速提出并通过了对企业现金留存征收新税的税制计划。新的税制计划针对截至上一财政年度，账面资产超过500亿韩元的公司或属于财阀的公司，对其扣除了支付、投资和工资增长的因素后超过特定门槛的收入征收10\%的税。
+
+\indent 本文以此为背景，研究了“公司是否持有了过多现金”的问题。在文章的最开始，作者定义了持有现金的“Right Amount”：作者认为如果企业的现金持有量是最优的（Right Amount)，那么多持有一单位现金带来的边际收益应该和边际成本相等。边际成本用“机会成本”（alternative use，包括支付给投资者或者投资新项目）来衡量。故如果一家公司的现金持有量是最优的，那么外部冲击（导致其改变现金持有量）会减少Firm Value；如果如果一家公司的现金持有量是过多的，那么外部冲击（导致其改变现金持有量）会增加Firm Value。
+
+\subsection{模型回归}
+\indent 为了研究新的税制计划对公司现金持有量的影响，作者建立了DID模型，比较了新的税制计划生效受到影响的公司与未受影响的公司，时间为生效前两年（2013-2014）至改革后两年（2015-2016）。为了控制公司的现金持有量等变量变化只是受新的税制计划影响，作者分别对三类样本展开研究：全样本、资产在100亿-900亿之间的公司样本、一对一匹配（对一些控制变量做近邻匹配）的样本。同时，作者进行了公司层面的聚类标准误调整，并且控制了个体固定效应、行业固定效应与时间固定效应。回归结果显示处理组公司确实大幅度削减了现金持有量。
+
+\indent 为了确定改革是否提高或降低了受影响公司的估值，作者关注CAR（cumulative abnormal returns）变量，使用3天窗口期，从两个重大事件（草案发布，法规实施）的前一天到后一天捕捉公司层面的CAR变化。作者假设投资者认为改革会减少公司5\%的价值，在草案公布前，由于不知道标的公司是否会被征税，处理组和控制组都有50\%的概率减少5\%的价值，期望就是-2.5\%，所有公司股价都可能下跌。在草案公布后，控制组的公司因为不会被征税，与预期相比存在回调，股价就会回升，处理组的股价应该进一步下跌。
+
+\indent 研究发现经历过亚洲金融危机的企业在冲击后减少现金留存幅度、增加支出幅度、提升估值幅度更大；公司治理好与坏的公司在冲击后均减少了现金留存；公司治理差的公司提高了对外投资支出，但没有提升公司估值（因为新的投资没有正的NPV），而公司治理好的公司提高了payouts，提高了公司估值。
+
+\subsection{机制提出与检验}
+\indent 作者提出并检验了两种使公司超额储备现金的机制，Behavioral biases与Agency conflicts。Behavioral biases机制指出经历过经济危机的公司经理倾向于持有更多的现金，越看重经济危机的经历的就越是如此；而Agency conflicts机制则指出公司治理问题、代理人问题会导致持有更多的现金。
+
+\indent 作者对Behavioral biases与Agency conflicts机制进行了检验。对于Behavioral biases机制，作者使用（i）CEO在经济危机期间在某个企业工作；（ii）企业成立时间早于亚洲金融危机，而且严重依赖于外部融资两个指标测度企业的Crisis-Memory，使用三重差分的方法研究具有Crisis-Memory的处理组企业对改革的态度是否与其它的处理组企业不同。研究发现Crisis-Memory对现金持有量有显著影响，有Crisis-Memory的企业在政策后对现金持有量削减幅度更大。
+
+\indent 对于Agency conflicts机制，作者使用三重差分的方法，并借助KCGS的打分衡量公司的治理能力。研究发现公司治理对于现金持有量变化的影响不显著。但是公司治理情况会影响现金支出的去向。治理好的公司更多流向股东，治理差的公司现金支出更流向工资和投资上。
+
+\section{数据来源与数据处理}
+\indent 本节首先介绍复现数据的来源以及回顾作者对数据进行的操作。然后报告样本中进行描述性统计，汇报处理组和控制组公司的数量及相关统计数据。
+
+\subsection{数据来源}
+\indent 复现中使用的数据主要由原文作者提供，经确认，这份数据为作者模拟得到，并非真实数据。这些数据包括会计信息、股票价格和其他公司特征数据都是从 DataGuide 收集，并使用韩国公平贸易委员会 (KFTC) 每年指定的大型企业集团的数据来确定哪些公司属于财阀。作者的数据经过以下筛选操作：
+
+\begin{enumerate}
+    \item 排除缺少账面资产数据的公司，缺少这项数据将导致没法判断公司属于控制组还是处理组；
+    \item 排除金融公司和公用事业公司，因为这些公司的现金和投资政策受到监管；
+    \item 排除极端数据，具体指总资产低于 10 亿韩元,一些资本支出低于总资产的 10 \% 的公司和现代汽车、起亚汽车和现代摩比斯三家公司（因为这三家公司在样本期间对房地产进行了大量投资，而这些投资在改革冲击之前就做好规划，与冲击无关）;
+\end{enumerate}
+
+\indent 最终样本中总共含20,916 家公司。
+
+\subsection{样本空间的构建}
+\indent 所有的回归模型均在下面三个样本空间中分别回归：
+\begin{enumerate}
+    \item 完整样本;
+    \item 账面资产在 100 亿至 900 亿之间的样本;
+    \item 在每个被处理公司和其最近的邻居之间进行一对一匹配的样本（在匹配过程中，我们要求在行业和公开上市地位上完全匹配，在这个集合中，我们根据改革前的销售额、销售增长、净收入和杠杆的马哈拉诺比斯距离来选择最近的邻居）。
+\end{enumerate}
+
+\section{描述性统计}
+
+\begin{table}[H]
+\caption{样本构成}
+\centering
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+                     & Chaebol                     & Non-chaebol                  & Total \\ \hline
+\multicolumn{4}{l}{A1:All firms}                                                          \\ \hline
+SEQ $\geq$ 50 billion & \cellcolor[HTML]{CBCEFB}545 & \cellcolor[HTML]{CBCEFB}2461 & 3006  \\
+SEQ $<$ 50 billion   & \cellcolor[HTML]{CBCEFB}468 & 18683                        & 19151 \\
+total                & 1013                        & 21144                        & 22157 \\ \hline
+\multicolumn{4}{l}{A2:Firms in {[}10B,90B{]}}                                             \\ \hline
+SEQ $\geq$ 50 billion & \cellcolor[HTML]{CBCEFB}84  & \cellcolor[HTML]{CBCEFB}1102 & 1186  \\
+SEQ $<$ 50 billion   & \cellcolor[HTML]{CBCEFB}278 & 7106                         & 7384  \\
+total                & 362                         & 8208                         & 8570  \\ \hline
+\multicolumn{4}{l}{A3:Public firms only}                                                  \\ \hline
+SEQ $\geq$ 50 billion & \cellcolor[HTML]{CBCEFB}233 & \cellcolor[HTML]{CBCEFB}1056 & 1279  \\
+SEQ $<$ 50 billion   & \cellcolor[HTML]{CBCEFB}23  & 903                          & 926   \\
+total                & 246                         & 1959                         & 2205  \\ \hline
+\end{tabularx}
+\begin{tablenotes}
+\footnotesize
+    \item 本表报告了处理和未处理公司的数量统计。在A1-A3板块中，我们报告了每个处理标准中的企业数量统计，分别基于企业的账面资产是否超过500亿韩元和企业是否属于财阀。当该组中的公司被处理时，单元格会有阴影。
+\end{tablenotes}
+\end{table}
+
+
+\vspace{-0.7cm}
+
+\begin{table}[H]
+\caption{关键指标描述性统计}
+\small
+\begin{tabularx}{\textwidth}{lXXllXXXX}
+\toprule
+                                & Mean   & SD    & P1      & P25    & P50    & P75    & P99    & N     \\ \midrule
+Treated                         & 0.17   & 0.37  & 0.00    & 0.00   & 0.00   & 0.00   & 1.00   & 80494 \\
+After                           & 0.53   & 0.50  & 0.00    & 0.00   & 1.00   & 1.00   & 1.00   & 80494 \\
+SEQ $\geq$ 50 billion           & 0.15   & 0.35  & 0.00    & 0.00   & 0.00   & 0.00   & 1.00   & 80494 \\
+Chaebol                         & 0.05   & 0.21  & 0.00    & 0.00   & 0.00   & 0.00   & 1.00   & 80494 \\
+Cash/asset(\%)                  & 10.72  & 13.08 & -19.80  & 1.92   & 10.72  & 19.50  & 41.51  & 80494 \\
+$\Delta$ Cash/assets(\%)        & 0.99   & 7.90  & -17.31  & -4.37  & 0.95   & 6.36   & 19.26  & 74016 \\
+$\Delta$ (Cash+IVLT)/assets(\%) & 0.97   & 8.62  & -19.17  & -4.83  & 0.96   & 6.77   & 20.85  & 74378 \\
+Payouts(\%)                     & 0.74   & 2.40  & -4.10   & 0.00   & 0.00   & 0.00   & 9.95   & 74390 \\
+$\qquad$Dividends(\%)                   & 0.50   & 1.77  & -3.58   & -0.69  & 0.51   & 1.70   & 4.62   & 74390 \\
+$\qquad$Repurchases(\%)                 & 0.09   & 0.59  & -1.29   & -0.31  & 0.09   & 0.49   & 1.47   & 74390 \\
+Investment(\%)                  & 3.52   & 9.63  & -18.80  & -2.93  & 3.52   & 9.97   & 25.97  & 68376 \\
+$\qquad$Investment in land(\%）          & 1.11   & 6.34  & -13.55  & -3.17  & 1.09   & 5.41   & 15.92  & 72626 \\
+$\qquad$Investment in building(\%）      & 1.02   & 4.79  & -10.11  & -2.19  & 1.01   & 4.24   & 12.19  & 72627 \\
+$\qquad$Investment in equipment(\%）     & 1.19   & 4.18  & -8.47   & -1.64  & 1.20   & 4.00   & 10.90  & 72631 \\
+Wage increases(\%)              & 0.34   & 1.48  & -3.14   & -0.65  & 0.35   & 1.34   & 3.79   & 71809 \\
+Asset(log)                      & 24.17  & 1.16  & 21.47   & 23.40  & 24.17  & 24.95  & 26.87  & 80494 \\
+Sales(log)                      & 23.86  & 1.64  & 20.08   & 22.76  & 23.86  & 24.96  & 27.69  & 78689 \\
+Sales growth(\%)                & 15.59  & 81.06 & -172.42 & -39.08 & 15.41  & 70.18  & 205.06 & 72452 \\
+Net income(\%)                  & 2.13   & 11.53 & -24.70  & -5.66  & 2.17   & 9.88   & 28.91  & 74322 \\
+Net debt issuance(\%)           & 2.94   & 13.97 & -29.49  & -6.44  & 2.97   & 12.35  & 35.36  & 74100 \\
+Leverage(\%)                    & 32.14  & 28.39 & -34.55  & 13.10  & 32.25  & 51.42  & 98.27  & 80494 \\
+G-index                         & 102.55 & 22.56 & 51.00   & 90.00  & 100.00 & 112.00 & 173.00 & 2513  \\ \bottomrule
+\end{tabularx}
+
+\end{table}
+
+\vspace{-0.5cm}
+
+\indent 上表报告了样本公司2013至2016年年度相关数据的描述性统计结果。为了防止异常值对研究结果的影响，作者对所有连续变量进行缩尾处理。
+
+\section{回归分析}
+\subsection{回归模型建立}
+\indent 为了分析改革对企业财务和投资政策的影响，我们采用了差异分析法。该分析比较了改革前两年（2013-14 年）和改革后两年（2015-16 年）接受改革处理的公司和未接受改革处理的公司。我们估计以下基线模型：\begin{equation}
+    y_{i, t}=\theta+\beta_{0} Treated _{i}+\beta_{1} After _{t}+\beta_{2} Treated _{i} \times After _{t}+\eta^{\prime} \cdot \mathbf{X}_{i, t}+\varphi_{i}+\tau_{t}+\psi_{j, t}+\varepsilon_{i, t}
+\end{equation}
+\indent 其中$i$代表公司，$j$ 代表行业，$t$ 代表年份。\\
+\indent 基线模型中关键解释变量与被解释变量及其含义在下表中列示。
+
+\begin{table}[H]
+\caption{回归中关键变量描述}
+\begin{tabularx}{\textwidth}{cX}
+\toprule
+主要变量          & 变量描述                                  \\ \midrule
+y             & 结果变量，包括：现金积累；支出；投资；工资增长               \\
+Treaded       & 哑变量,公司是否需要缴纳新税，上一年度账面资产超过500亿韩元或者属于财阀 \\
+After         & 哑变量，改革后年份取1，改革前年份取0                   \\
+X             & 控制变量                                  \\
+$\varphi$     & 公司固定效应，解释任何时间上公司之间的不变差异               \\
+$\tau$        & 年份固定效应，控制了随时间变化的经济冲击                  \\
+$\varepsilon$ & 控制任何行业的冲击或其他影响特定行业的时间变化的遗漏变量          \\ \bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{对现金保留的影响}
+\indent 该部分验证改革会使得处理组的公司保留更少的现金。\\
+\indent 作者建立了两个模型进行回归。在A模型中，用现金变化/滞后总资产作为因变量来进行回归；在B模型中，用现金加长期有价证券投资（IVLT）的变化/滞后总资产的比例作为因变量进行回归。\\
+\indent 回归依然基于三个样本。在第1列和第2列中，作者使用整个样本，而在第3列和第4列中，作者将样本限制在100—900亿韩元账面权益范围内的公司。在第5列和第6列中，作者使用匹配样本\footnote[1]{根据：行业、公司是否上市、期前销售额、销售增长、净收入、杠杆率、马哈拉诺比斯距离将每个接受处理的公司与未接受处理的公司匹配}的结果。\\
+\indent 将回归结果报告在下表中。可以看到在A、B模型，三个样本中，交叉项的回归系数均为负，且均显著。回归结果显示改革会使得处理组的公司保留更少的现金。\\
+
+\begin{table}[H]
+\caption{现金留存的影响}
+\centering
+\begin{tabular}{lcccccc}
+\toprule
+                           & (1)            & (2)          & (3)                  & (4)                  & (5)          & (6)          \\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} 
+Sample                     & \multicolumn{2}{c}{All firms} & \multicolumn{2}{c}{Firms in {[}10B, 90B{]}} & \multicolumn{2}{c}{Matched} \\ \midrule
+A.$\Delta$ Cash/assets          &                &              &                      &                      &              &              \\ \midrule
+Treated ×   After          & −0.282**       & −0.291*      & −0.449**             & −0.442**             & −0.607*      & −0.558*      \\
+                           & (−2.06)        & (−1.95)      & (−2.23)              & (−2.03)              & (−1.90)      & (−1.87)      \\
+N                          & 71,476         & 70,504       & 32,094               & 31,027               & 25,043       & 24,083       \\
+$R^2$                         & 0.1910         & 0.2447       & 0.1880               & 0.2781               & 0.1752       & 0.3542       \\ \midrule
+B. $\Delta$ (Cash + IVLT)/assets &                &              &                      &                      &              &              \\ \midrule
+Treated ×   After          & −0.309**       & −0.309*      & −0.495**             & −0.476**             & −0.629*      & −0.574*      \\
+                           & (−1.99)        & (−1.89)      & (−2.22)              & (−2.14)              & (−1.88)      & (−1.79)      \\
+N                          & 71,865         & 70,894       & 32,130               & 31,067               & 25,104       & 24,144       \\
+$R^2$                         & 0.2165         & 0.2672       & 0.2104               & 0.2941               & 0.1908       & 0.3622       \\ \midrule
+Firm FE                    & Yes            & Yes          & Yes                  & Yes                  & Yes          & Yes          \\
+Year FE                    & Yes            & No           & Yes                  & No                   & Yes          & No           \\
+Industry ×   Year FE       & No             & Yes          & No                   & Yes                  & No           & Yes          \\ \bottomrule
+\end{tabular}
+\begin{tablenotes}
+    \item 括号内t统计量是由异方差稳健的标准误差计算得出，按公司或财阀集团进行分组；*P<.1；**P<.05；***P<.01
+\end{tablenotes}
+\end{table}
+
+\subsection{现金的边际价值}
+\indent 原先持有一美元现金的价值小于一美元，而改革政策会使这个边际价值增加，增加到接近一美元。\\
+\indent 这部分作者建立回归模型如下，使用2011年至2016年的上市公司作为样本，分为三组：整个样本、100-900亿韩元账面资产公司、处理过的-未处理过的匹配公司样本。三组的回归结果如下表所示。\\
+\begin{equation}
+    \begin{split}
+        \text { Excess Return }_{i, t}= &\theta+\beta_{1} \Delta \text { Cash }_{i, t}+\beta_{2} \text { Treated }_{i}+\beta_{3} \text { After }_{t}+\beta_{4} \text { Treated }_{i} \times \text { After }_{t} \\
+        &+\beta_{5} \Delta \text { Cash }_{i, t} \times \text { Treated }_{i}+\beta_{6} \Delta \text { Cash }_{i, t} \times \text { After }_{t} \\ &+\beta_{7} \Delta \text { Cash }_{i, t} \times \text { Treated }_{i} \times \text { After }_{t}+\eta^{\prime} \cdot \mathbf{X}_{i, t}+\varepsilon_{i, t} \\  
+    \end{split}
+\end{equation}
+
+\begin{table}[H]
+\caption{现金的价值}
+\centering
+\begin{tabular}{lccc}
+\toprule
+                                    & (1)       & (2)                     & (3)      \\ \midrule
+Dependent   variable: Excess return &           &                         &          \\ \midrule
+Sample                              & All firms & \makecell[c]{Firms in \\ {[}10B, 90B{]}} & Matched  \\ \midrule
+$\Delta$ Cash                               & 0.921***  & 0.923***                & 0.724*** \\
+                                    & (3.74)    & (3.40)                  & (3.70)   \\
+$\Delta$ Cash × After                       & 0.023     & 0.005                   & 0.115    \\
+                                    & (0.14)    & (0.03)                  & (0.52)   \\
+$\Delta$ Cash × Treated                     & −0.305*   & −0.056                  & −0.123   \\
+                                    & (−1.84)   & (−0.15)                 & (−0.51)  \\
+$\Delta$ Cash × Treated × After             & 0.306**   & 0.190**                 & 0.220**  \\
+                                    & (2.17)    & (1.98)                  & (2.31)   \\
+                                    &           &                         &          \\
+Controls                            & Yes       & Yes                     & Yes      \\
+                                    &           &                         &          \\
+N                                   & 7,657     & 3,778                   & 9,084    \\
+R2                                  & 0.1092    & 0.1043                  & 0.1109   \\ \bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+    \item 本表按照Faulkender和Wang（2006）的方法报告了现金价值的结果。我们使用的是2011年至2016年的上市公司样本，同时不包括2014年。在第1列和第2列中，我们使用整个样本，而在第3列和第4列中，我们将样本限制在100-900亿韩元账面资产范围内的公司。在第5列和第6列中，我们使用了处理过的-未处理过的公司对的匹配样本。我们包括与Faulkender和Wang（2006）相同的控制变量，并进一步包括这些控制变量与治疗后的交互作用。t统计（括号内）是使用异方差稳健标准误差计算的。*P < .1; **P < .05; ***P < .01。
+\end{tablenotes}
+\end{table}
+
+\subsection{边际现金的其他用途：对于报酬、投资和工资增长的影响}
+\indent 接下来，作者关注改革之后公司在报酬、投资和工资增长的影响。与以上的所有回归相同，回归依然基于整个样本、100-900亿韩元账面资产公司、处理过的-未处理过的匹配公司样本。\\
+\indent 回归结果报告见表六。结果显示对报酬、投资和工资的交叉项回归系数均为正，且均显著。结果证明在改革之后，公司会增加对报酬、投资和工资三个方面都有明显增长。\\
+
+
+\begin{table}[H]
+\caption{替代用途： 支出、投资和增加工资}
+\centering
+\begin{tabular}{lcccccc}
+\toprule
+                     & (1)           & (2)           & (3)                  & (4)                  & (5)          & (6)          \\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+Sample               & \multicolumn{2}{c}{All firms} & \multicolumn{2}{c}{Firms in {[}10B, 90B{]}} & \multicolumn{2}{c}{Matched} \\ \midrule
+A. Payouts           &               &               &                      &                      &              &              \\ \midrule
+Treated ×   After    & 0.212***      & 0.216***      & 0.208***             & 0.219***             & 0.189**      & 0.166**      \\
+                     & (5.27)        & (5.03)        & (3.12)               & (3.06)               & (2.57)       & (2.32)       \\
+N                    & 71,883        & 70,912        & 32,134               & 31,071               & 25,104       & 24,144       \\
+$R^2$                   & 0.6206        & 0.6452        & 0.6275               & 0.6679               & 0.6285       & 0.6953       \\ \midrule
+B. Investment        &               &               &                      &                      &              &              \\ \midrule
+Treated ×   After    & 0.494***      & 0.480***      & 0.694***             & 0.712***             & 0.756***     & 0.739**      \\
+                     & (2.89)        & (2.69)        & (2.90)               & (2.59)               & (2.62)       & (2.48)       \\
+N                    & 65,887        & 64,934        & 30,447               & 29,416               & 24,320       & 23,358       \\
+$R^2$                   & 0.4077        & 0.4461        & 0.3934               & 0.4575               & 0.3716       & 0.4850       \\ \midrule
+C. Wage   increases  &               &               &                      &                      &              &              \\ \midrule
+Treated ×   After    & 0.173***      & 0.161***      & 0.122***             & 0.098***             & 0.106**      & 0.149***     \\
+                     & (8.02)        & (6.53)        & (3.68)               & (2.69)               & (2.25)       & (3.39)       \\
+N                    & 69,329        & 68,412        & 31,580               & 30,552               & 24,744       & 23,804       \\
+$R^2$                   & 0.3889        & 0.4358        & 0.3946               & 0.4616               & 0.3738       & 0.5076       \\
+Firm FE              & Yes           & Yes           & Yes                  & Yes                  & Yes          & Yes          \\
+Year FE              & Yes           & No            & Yes                  & No                   & Yes          & No           \\
+Industry ×   Year FE & No            & Yes           & No                   & Yes                  & No           & Yes          \\ \bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+    \item 本表报告了报酬（A组）、投资（B组）和工资增长（C组）的差额结果。在第1列和第2列中，我们使用了整个样本，而在第3列和第4列中，我们将样本限制在账面股本100-900亿韩元范围内的公司。在第5列和第6列中，我们使用匹配的处理-未处理公司对的样本来报告结果。t统计数字（括号内）是使用异方差稳健的标准误差计算出来的，并按公司或财阀集团进行分组。*P < .1; **P < .05; ***P < .01。
+\end{tablenotes}
+\end{table}
+
+\subsection{渠道分析}
+该部分分析什么途径会增加公司超额持有现金的意愿。
+
+\subsubsection{拥有危机记忆的公司对于改革的影响}
+\indent 拥有危机记忆在传导逻辑中是是否重要？作者使用（i）CEO在经济危机期间在某个企业工作；（ii）企业成立时间早于亚洲金融危机，而且严重依赖于外部融资两个指标测度企业的Crisis-Memory并建立如下模型。\\
+\indent 作者使用三重差分的方法研究具有Crisis-Memory的处理组企业对改革的态度是否与其它的处理组企业不同。研究发现Crisis-Memory对现金持有量有显著影响，有Crisis-Memory的企业在政策后对现金持有量削减幅度更大。\\
+\begin{equation}
+    \begin{split}
+        y_{i, t}=&\theta+\beta_{0} \text { Treated }_{i}+\beta_{1} \text { After }_{t}+\beta_{2} \text { Treated }_{i} \times \text { After }_{t}+\beta_{3} \text { Treated }_{i} \times \text { CrisisMemory }_{i} \\ &+\beta_{4} \text { CrisisMemory }_{i} \times \text { After }_{t}+\beta_{5} \text { Treated }_{i} \times \text { CrisisMemory }_{i} \times \text { After }_{t} \\ &+\varphi_{i}+\tau_{t}+\psi_{j, t}+\varepsilon_{i, t} 
+    \end{split}
+\end{equation}
+
+\subsubsection{公司治理对于改革的影响}
+为了衡量公司治理质量，我们采用了由韩国公司治理服务机构（KCGS）创建的治理分数。KCGS每年为在KOSPI市场（主要交易所）上市的大型公司计算这些分数，因此，这个衡量标准仅限于这些公司。该分数被计算为一个总和，包含了治理的四个不同方面：（i）对股东权利的保护；（ii）董事会的内部程序；（iii）监督组织的质量；（iv）信息披露的透明度。我们定义了一个指标变量High-G，如果公司的治理得分高于中位数，则等于1。这里的高分表示更好的治理。
+
+这部分的回归方程与（3）式的结构相似，结论表明，治理好的公司和治理差的公司在现金保留的反应上没有显著差异。但是对于现金的分配上有着不同。治理好的公司会增加支付，减少投资和工资支付。
+
+\begin{table}[H]
+\caption{治理的作用-公司的反应和治理}
+\centering
+\begin{tabular}{lcccc}
+\toprule
+                           & (1)          & (2)     & (3)        & (4)           \\ 
+Dependent   variable:      & $\Delta$ Cash/assets & Payouts & Investment & Wage increase \\ \midrule
+Treated ×   After          & −0.601       & 0.050   & 2.722*     & 0.298**       \\
+                           & (−0.72)      & (0.61)  & (1.91)     & (2.01)        \\
+High-G ×   After           & 2.053        & −0.283* & 2.586**    & 0.245**       \\
+                           & (1.50)       & (−1.77) & (2.05)     & (2.11)        \\
+Treated ×   After × High-G & −1.777       & 0.350** & −2.661**   & −0.213**      \\
+                           & (−1.26)      & (2.06)  & (−2.13)    & (−1.99)       \\
+Firm FE                    & Yes      & Yes  & Yes  & Yes      \\
+Industry ×   Year FE       & Yes     &  Yes    & Yes      &  Yes         \\
+N                          & 2,521        & 2,521   & 2,471      & 2,514         \\
+R2                         & 0.1779       & 0.7595  & 0.3707     & 0.4521        \\ \bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+    \item 本表报告了企业之间的截面差异的结果，取决于企业的公司治理质量。在研究公司反应的不同效果时，这些检验是基于三差分回归的（A组）。高G是公司治理指数是否高于中位数的指标。t统计数字（括号内）是使用异方差稳健的标准误差计算的，并按公司或财阀集团进行分组。*P < .1; **P < .05; ***P < .01。
+\end{tablenotes}
+\end{table}
+
+
+\section{稳健性检验}
+\subsection{平行趋势检验}
+为了进一步支持平行趋势的假设，我们报告了改革前几年受处理和未受处理企业之间主要结果变量的前趋势结果。这些回归中的因变量是2013年和2014年结果变量的平均年度变化，我们将其回归到受处理指标上。A组报告了所有公司的结果，而B组则集中在100-900亿韩元范围内的公司。我们没有发现在被处理和未被处理的企业之间有任何明显的不同的前期趋势。
+
+\begin{table}[H]
+\caption{平行趋势检验}
+\centering
+\begin{tabularx}{\textwidth}{lXXXXXXXX}
+\toprule
+                             & (1)             & (2)            & (3)           & (4)         & (5)            & (6)           & (7)              & (8)            \\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+Avg. $\Delta$ of:                   & \multicolumn{2}{c}{$\Delta$ Cash/assets} & \multicolumn{2}{c}{Payouts} & \multicolumn{2}{c}{Investment} & \multicolumn{2}{c}{Wage increase} \\ \midrule
+A. All firms                 &                 &                &               &             &                &               &                  &                \\ \midrule
+Treated                      & −0.078          & −0.165         & −0.050        & −0.017      & −0.375         & −0.129        & −0.034           & −0.031         \\
+                             & (−0.22)         & (−0.45)        & (−0.89)       & (−0.28)     & (−0.87)        & (−0.27)       & (−0.67)          & (−0.58)        \\
+Constant                     & −0.029          &                & −0.533        &             & −4.760         &               & −0.910**         &                \\
+                             & (−0.01)         &                & (−1.28)       &             & (−1.25)        &               & (−2.16)          &                \\
+Controls                     & Yes             & Yes            & Yes           & Yes         & Yes            & Yes           & Yes              & Yes            \\
+Industry FE                  & No              & Yes            & No            & Yes         & No             & Yes           & No               & Yes            \\
+N                            & 16,003          & 15,745         & 16,095        & 15,838      & 15,298         & 15,051        & 15,539           & 15,295         \\
+$R^2$                           & 0.0006          & 0.0746         & 0.0026        & 0.0644      & 0.0071         & 0.0754        & 0.0007           & 0.0833         \\ \midrule
+B. Firms in   {[}10B, 90B{]} &                 &                &               &             &                &               &                  &                \\ \midrule
+Treated                      & −0.157          & −0.171         & −0.101        & −0.054      & −0.979*        & −1.074*       & −0.017           & −0.039         \\
+                             & (−0.32)         & (−0.42)        & (−1.22)       & (−0.61)     & (−1.83)        & (−1.76)       & (−0.27)          & (−0.57)        \\
+Constant                     & −1.296          &                & −2.673**      &             & −13.882*       &               & −0.285           &                \\
+                             & (−0.21)         &                & (−2.53)       &             & (−1.85)        &               & (−0.34)          &                \\
+Industry FE                  & No              & Yes            & No            & Yes         & No             & Yes           & No               & Yes            \\
+Controls                     & Yes             & Yes            & Yes           & Yes         & Yes            & Yes           & Yes              & Yes            \\
+N                            & 7,622           & 7,347          & 7,633         & 7,359       & 7,400          & 7,135         & 7,514            & 7,251          \\
+$R^2$                           & 0.0002          & 0.1204         & 0.0040        & 0.1023      & 0.0051         & 0.1143        & 0.0004           & 0.1180         \\ \bottomrule
+\end{tabularx}
+\begin{tablenotes}
+\footnotesize
+    \item 本表报告了关于改革前结果变量在受处理和未受处理企业之间平均变化的差异的回归结果。因变量是2013年和2014年结果变量的年度变化的平均值。在A组中，我们使用整个样本，而在B组中，我们将样本限制在100-900亿韩元账面资产范围内的公司。我们包括一组控制变量（销售额、销售增长、净收入和杠杆率）以及所示的行业固定效应。t统计数字（括号内）是使用异方差稳健的标准误差计算出来的，并按公司或连锁集团分类。*P < .1; **P < .05; ***P < .01。
+\end{tablenotes}
+\end{table}
+
+\vspace{-1cm}
+\subsection{排除财阀}
+\indent 我们在测试中排除了所有的财阀企业。对于剩下的那些非财阀公司，一个公司是否被处理完全取决于其账面资产是否高于或低于500亿韩元。我们进一步将样本限制在100-900亿韩元的范围内。在这些测试中，结果仍然与我们之前的基线研究结果相似，这意味着财阀公司和非财阀公司之间任何可能的趋势差异都不会驱动之前的结果。
+\subsection{安慰剂检验}
+在100亿至900亿韩元的相对狭窄的账面资产范围内，然后围绕500亿韩元的门槛，对于财阀企业进行差异测试。我们的研究结果表明，500亿韩元的门槛并没有预测到财阀企业的主要结果变量的不同变化。对于投资，我们甚至发现了与我们在基线结果中观察到的相反的效果。这有助于解决一种可能性，即在改革宣布之前，人们可能已经存在预期，认为财阀会受到这种改革的影响，而积极的宣布效应可能反映了这些公司的监管不确定性的某种解决。这一分析表明，在剔除了财阀公司后，基线结果仍然存在，这表明财阀公司的预期效应并没有混淆基线估值效应。
+
+\begin{table}[H]
+\caption{安慰剂检验}
+\centering
+\small
+\begin{tabularx}{\textwidth}{lXXXX}
+\toprule
+Dependent variable:                           & $\Delta$ Cash/assets & Payouts  & Investment & Wage increase \\ \midrule
+                                              & (1)          & (2)      & (3)        & (4)           \\ \midrule
+A.   Non-chaebol firms in {[}10B, 90B{]}      &              &          &            &               \\ \midrule
+1\{Book equity   ≥ 50 billion\}× After        & −0.489*      & 0.250*** & 0.591**    & 0.082**       \\
+                                              & (−1.70)      & -3.16    & -1.97      & -2.06         \\
+N                                             & 29700        & 29735    & 28264      & 29287         \\
+$R^2$                                            & 0.2794       & 0.6691   & 0.453      & 0.4589        \\ \midrule
+B. Placebo,   chaebol firms in {[}10B, 90B{]} &              &          &            &               \\ \midrule
+1\{Book equity   ≥ 50 billion\}× After        & −0.104       & −0.203   & −3.958**   & −0.060        \\
+                                              & (−0.04)      & (−0.46)  & (−2.12)    & (−0.36)       \\
+N                                             & 758          & 758      & 623        & 730           \\
+$R^2$                                            & 0.4303       & 0.7523   & 0.6914     & 0.6083        \\ \midrule
+C. Additional   control variables             &              &          &            &               \\ \midrule
+Treated ×   After                             & −0.530**     & 0.225*** & 0.626***   & 0.174***      \\
+                                              & (−2.49)      & -4.28    & -2.98      & -5.61         \\
+Additional   controls                         & Yes          & Yes      & Yes        & Yes           \\
+N                                             & 68656        & 68968    & 64845      & 67216         \\
+$R^2$                                            & 0.2613       & 0.6507   & 0.4062     & 0.4495        \\
+Firm FE                                       & Yes          & Yes      & Yes        & Yes           \\
+Industry ×   Year FE                          & Yes          & Yes      & Yes        & Yes           \\ \bottomrule
+\end{tabularx}
+\begin{tablenotes}
+\footnotesize
+    \item 本表报告了不同样本和回归规格的差分回归结果。在A组中，我们只报告了在500亿韩元股权门槛附近较窄带宽内的非财阀企业的基线回归结果。在B组中，我们只报告了在较窄的带宽内，只对财阀企业进行 "安慰剂测试 "的结果；这些财阀企业无论其规模如何，都会受到改革的影响。在C组中，我们报告了包含额外控制因素的回归结果。具体来说，我们包括与处理门槛（账面股权-500亿韩元）的距离，就像在回归不连续差分（RD-DD）框架中一样，销售、销售增长、净收入和杠杆；所有这些控制都与After进一步互动。为简洁起见，这些控制变量的系数被省略了，但可在表14中找到。我们在所有规格中都包括公司和行业年的固定效应。t统计量（括号内）是使用异方差稳健的标准误差计算的，并按公司或财阀集团分类。*P < .1; **P < .05; ***P < .01。
+\end{tablenotes}
+\end{table}
+
+\subsection{额外控制}
+另一种考虑与账面资产有关的可能混杂效应的方法是采用回归不连续差分（RD-DD）框架。为此，我们在基线回归中加入了与After相互作用的距离阈值（账面权益-500亿韩元）的控制。我们还包括额外的控制变量，销售、销售增长、净收入和杠杆，都与After相互作用。这些结果，在表11的C组中报告，表明在考虑到与门槛的距离和其他可能的协变量时，估计的效果仍然相似或变得更强。
+
+\begin{table}[H]
+    \centering
+    \caption{额外控制}
+    \begin{tabular}{@{}lllll@{}}
+    \toprule
+                       & (1)          & (2)      & (3)        & (4)           \\ \cmidrule(l){2-5} 
+    VARIABLES          & $\Delta$Cash/assets & Payouts  & Investment & Wage increase \\ \midrule
+    Treated×After      & 0.018        & 0.078    & -0.062     & 0.020         \\
+                       & (0.105)      & (1.217)  & (-0.279)   & (0.616)       \\
+    Distance           & -0.000       & 0.000    & -0.000*    & 0.000         \\
+                       & (-0.340)     & (0.909)  & (-1.723)   & (1.238)       \\
+    Sales              & -0.017       & 0.002    & 0.018      & -0.000        \\
+                       & (-0.516)     & (0.196)  & (0.446)    & (-0.058)      \\
+    Sales growth       & 0.166**      & -0.023   & -0.038     & -0.013        \\
+                       & (2.532)      & (-1.270) & (-0.457)   & (-1.085)      \\
+    Net income         & 0.006        & -0.002*  & 0.004      & 0.000         \\
+                       & (1.387)      & (-1.743) & (0.697)    & (0.282)       \\
+    Leverage           & 0.003*       & -0.001   & 0.000      & 0.000         \\
+                       & (1.878)      & (-1.425) & (0.161)    & (0.607)       \\
+    Distance×After     & 0.000        & -0.000   & 0.000      & -0.000        \\
+                       & (0.330)      & (-0.309) & (1.105)    & (-0.698)      \\
+    Sales×After        & -0.020       & -0.005   & -0.014     & 0.004         \\
+                       & (-0.439)     & (-0.435) & (-0.242)   & (0.451)       \\
+    Sales growth×After & -0.242***    & 0.018    & 0.010      & 0.002         \\
+                       & (-2.649)     & (0.701)  & (0.086)    & (0.100)       \\
+    Net income×After   & -0.004       & 0.001    & 0.005      & 0.001         \\
+                       & (-0.605)     & (0.787)  & (0.608)    & (0.640)       \\
+    Leverage×After     & -0.004*      & 0.000    & -0.003     & -0.000        \\
+                       & (-1.747)     & (0.459)  & (-0.979)   & (-0.584)      \\
+    Constant           & 1.588***     & 0.813*** & 3.302***   & 0.299***      \\
+                       & (2.907)      & (5.523)  & (4.823)    & (2.911)       \\
+                       &              &          &            &               \\
+    Observations       & 68,656       & 68,968   & 63,890     & 67,216        \\
+    $R^2$          & 0.321        & 0.433    & 0.321      & 0.318         \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{避免公司主动调整账面价值来避税的可能}
+我们使用 "Donut RD "的实证策略重新估计我们的结果，即我们专注于100-900亿韩元的范围，但不包括450-550亿韩元的公司，对这些公司来说，缩小规模以避免纳税的动机可能是最强烈的。
+
+\begin{table}[H]
+    \centering
+    \caption{避税的影响}
+    \small
+    \begin{tabularx}{\textwidth}{lXXXXXXXX}
+    \toprule
+                  & (1)             & (2)            & (3)          & (4)          & (5)            & (6)           & (7)             & (8)             \\ \cmidrule(l){2-3} \cmidrule(l){4-5} \cmidrule(l){6-7} \cmidrule(l){8-9} 
+    VARIABLES     & \multicolumn{2}{c}{$\Delta$cash/assets} & \multicolumn{2}{c}{Payouts} & \multicolumn{2}{c}{Investment} & \multicolumn{2}{c}{Wage increase} \\ \midrule
+    Treated×After & -0.110          & -0.035         & 0.007        & 0.010        & -0.453         & -0.281        & 0.001           & -0.050          \\
+                  & (-0.422)        & (-0.120)       & (0.070)      & (0.098)      & (-1.332)       & (-0.748)      & (0.011)         & (-0.966)        \\
+    Constant      & 1.002***        & 0.997***       & 0.954***     & 0.958***     & 3.548***       & 3.565***      & 0.344***        & 0.349***        \\
+                  & (49.891)        & (44.717)       & (130.074)    & (118.181)    & (140.394)      & (128.871)     & (95.475)        & (88.564)        \\
+    Observations  & 30,117          & 29,030         & 30,155       & 29,072       & 28,582         & 27,531        & 29,626          & 28,578          \\
+    $R^2$     & 0.261           & 0.337          & 0.386        & 0.446        & 0.263          & 0.338         & 0.262           & 0.335           \\ \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{本土研究回顾}
+\subsection{研究背景}
+\indent 税收中性原则指国家征税以不干预市场经济运行，平等对待一切纳税人为目标的税收制度。我国曾经的增值税转嫁规律及可抵扣范围设计导致留抵税款积压，给企业带来了资金困境、扭曲了税收中性原则。
+
+为了改变这种扭曲，2018年6月，财政部联合国家税务总局颁布《关于2018年退还部分行业增值税留抵税额有关税收政策的通知》，对装备制造等先进制造业、研发等现代服务业等18个大类行业及电网企业期末留抵税额予以退还。
+
+\subsection{理论分析与研究假设}
+\indent 作者首先指出企业持有现金主要有三种动机：交易动机、预防动机、代理动机。而作者指出此冲击会减少这三种动机，进而企业现金持有量。获得留抵退税的企业内部现金流增加，企业持现的交易动机降低；增值税留抵退税政策改善企业对于税收负担、财务风险的预期，企业持现的预防动机降低；税负的减少、资金的改善及市场的优化促使企业考虑到高额持现产生的代理成本，降低企业持现。在此基础上，作者提出假设1：留抵退税政策有助于降低试点企业的现金持有。
+
+作者还尝试分析留抵退税政策冲击对不同持有现金比例企业的影响差异。作者使用资源效应与信号效应的角度进行分析。作者指出留抵退税政策对企业持现兼具这两种效应。在“资源效应”下，企业持现的税收禀赋差异得以有效改善，“信号效应”下，企业持现的市场前景预期得以有效改善。在此基础上，作者提出假设2：“资源效应”和“信号效应”的共同作用将对极端持现的企业影响更大。
+
+在分析留抵退税政策对不同发展阶段的企业的影响时，作者从融资约束、资本性支出额度、盈利能力等角度指出留抵退税政策会显著降低成长期以及成熟期企业的现金持有。而对于衰退期企业，作者指出留抵退税政策对于这类企业现金持有的影响将更多反映为对于企业资金状况的缓解。在此基础上，作者提出假设3：相比衰退期企业，留抵退税政策对成长期、成熟期企业的现金持有影响更大。
+
+在分析留抵退税政策对不同纳税信用等级企业的差异性影响时，作者从资金情况，市场优化预期角度入手。一方面，纳税信用等级更高的企业资金状况更好，留抵税款退还带来的资金改善将降低其持现水平；另一方面，留抵退税政策对于纳税信用等级高的试点企业更强的市场优化预期也会降低其现金持有。在此基础上，作者提出假设4：相比于其他纳税信用等级企业，留抵退税政策对纳税信用等级高的企业现金持有的影响更大。
+
+\subsection{异质性分析}
+\indent 作者还在“资源效应”与“信号效应”层面进行了异质性分析。发现在留抵税款规模和融资约束层面，积压留抵税额规模更大、融资约束越严重的企业现金持有下降更显著；在税负转嫁能力和市场竞争能力层面，税负转嫁能力和市场竞争能力较弱的企业现金减持更为显著；税收征管力度越强、环境不确定性越高、环境动态性越高、环境丰富性越高的企业现金持有下降越显著。
+
+在研究留抵退税政策对企业极端持现金的影响时，作者建立了分位数回归模型。回归结果显示相比于现金持有较为“平均”的企业，留抵退税政策对于现金持有极高的企业以及现金持有极低的企业影响更大。
+
+\subsection{政策效果检验}
+\indent 作者运用现金流模式法将样本企业划分为成长期、成熟期和衰退期，探究留抵退税政策对不同生命周期阶段的企业持现影响。结果显示，相比于衰退期企业，留抵退税政策对成长期企业和成熟期企业现金持有的影响更大。
+
+作者还根据国家税务总局提供的纳税信用等级进行分组分析，结果显示相比于其他纳税信用等级企业，留抵退税政策对纳税信用等级Ａ级企业现金持有的影响更大。
+
+\subsection{经济后果检验}
+\indent 作者从短期经营绩效、经营风险波动视角分析留抵退税政策冲击下企业持现调整的经济后果。研究发现留抵退税政策下企业持现调整对于企业短期绩效产生了正向促进作用，对于企业经营业绩波动带来改善，且上述影响均对于资本密度高的企业影响更为显著。
+
+\section{研究设计}
+\subsection{样本选择}
+以财税[2018]70号文的颁布作为改善增值税税收中性的外生冲击，选取2013-2020年全部A股上市公司作为研究的初始样本。对初始样本处理如下：（1）删除样本期间IPO年度、挂牌ST以及退市样本；（2）删除金融行业样本；（3）删除关键变量数据确实及利润率、资产负债率异常样本；（4）用线性插值法对剩余样本中的缺失值进行填充；（5）对相关连续变量在1\%和99\%的水平上进行缩尾处理避免异常值影响。最终获得36232个“公司-年度”样本，涉及4529家公司。相关数据主要来自wind数据库。
+
+\begin{table}[H]
+\centering
+\caption{样本构成}
+\begin{tabular}{l|ll|l}
+    & 控制组   & 处理组   & 总数    \\ \hline
+政策前 & 7085  & 15560 & 22645 \\
+政策后 & 4251  & 9336  & 13587 \\ \hline
+总数  & 11336 & 24896 & 36232
+\end{tabular}
+\end{table}
+
+\subsection{模型设计与变量定义}
+我们采用双重差分法验证留抵退税政策对企业现金持有的影响。依据财税[2018]70号文，将先进制造业、服务业等18个大类行业及电网企业作为处理组，以2018年作为政策时点。通过处理组与控制组在留抵退税政策前后时间趋势上的差异评估留抵退税政策的净效应。同时，控制年度和公司固定效应，具体为：
+\begin{equation}
+    cashhold _{i, t}=\beta_{0}+\beta_{1} treat _{i} \times post _{t}+\sum controls _{i, t}+\sum firm _{i}+\sum year _{t}+\varepsilon_{i, t}
+\end{equation}
+
+其中，下标ｉ和ｔ为公司和年份，$\varepsilon$为随机干扰项。被解释变量$ｃａｓｈｈｏｌｄ$ 为企业现金持有的代理指标；$ｔｒｅａｔ $为试点企业分组变量，处理组为１，控制组为０；$ｐｏｓｔ $为时间分组变量，2018-2020 年为1，否则为0；$ｃｏｎｔｒｏｌｓ$ 为相关控制变量；$ｆｉｒｍ$ 为公司固定效应；$ｙｅａｒ$ 为年度固定效应；$\beta_1$为重点关注系数，表示留抵退税政策对企业现金持有的影响程度。为缓解可能存在的异方差及序列相关问题，对回归系数标准误在公司层面进行聚类调整（下同）。
+
+\subsection{被解释变量}
+现金持有（cashhold），分别以期末现金及现金等价物余额(cash1)、非现金资产(cash2)和营业收入(cash3)定义。鉴于企业持现存在较大行业差异，通过年度-行业中位数及标准差调整(zcash)。鉴于现金／ 总资产占比较大的公司净持现比率存在异常值，且营业收入潜在波动较大，主要以期末现金及现金等价物余额与总资产的比值(cash1)作为主要研究变量。
+
+\subsection{核心解释变量}
+留抵退税政策(treat$\times$post)，treat为虚拟变量，若企业为财税[2018]70 号文列出的18 个大类行业及电网企业，则treat取值为1，否则为0，若样本期间公司行业变化，则手工筛选予以剔除；post为虚拟变量，留抵退税政策之后(2018 年及之后)取值为1，否则为0。
+
+\subsection{控制变量}
+控制变量依次选取企业规模(size)、财务杠杆(lev)、经营现金流(ocf)、净营运资本(nwc)、资本投入(capex)、企业成长性(grow)、股利支付率(div)、两职兼任情况(dual)、股权集中度(top1)、董事会规模(board)以及独董比例(indrat)。
+
+具体变量定义见下表。
+
+\begin{table}[H]
+    \centering
+    \caption{变量定义}
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    变量类型                        & 变量名称                        & 符号     & 变量定义                                                                                              \\ \hline
+    \multirow{4}{*}{4* 被解释变量}   & \multirow{4}{*}{4* 现金持有}    & cash1  & 现金及现金等价物(亿元)                                                                                      \\ \cline{3-4} 
+                                &                             & cash2  & \begin{tabular}[c]{@{}l@{}}现金及现金等价物/（总资产-现金及现金\\    \\ 等价物）\end{tabular}                          \\ \cline{3-4} 
+                                &                             & cash3  & 现金及现金等价物/营业收入                                                                                     \\ \cline{3-4} 
+                                &                             & zcash  & \begin{tabular}[c]{@{}l@{}}经年度-行业均值及标准差处理的现金持\\    \\ 有水平\end{tabular}                            \\ \hline
+    \multirow{2}{*}{2* 核心解释变 量} & \multirow{2}{*}{2* 留抵退税政 策} & treat  & \begin{tabular}[c]{@{}l@{}}哑变量，财税 {[}2018{]}70 号文中 18   个大类\\    \\ 行业及电网企业取 1，否则为 0\end{tabular} \\ \cline{3-4} 
+                                &                             & post   & \begin{tabular}[c]{@{}l@{}}哑变量，2018 年及以后取值为 1，否则为\\    \\ 0\end{tabular}                          \\ \hline
+    \multirow{11}{*}{11* 控制变量}  & 企业规模                        & size   & 企业年末资产总额的自然对 数                                                                                    \\ \cline{2-4} 
+                                & 财务杠杆                        & lev    & 总负债/总资产                                                                                           \\ \cline{2-4} 
+                                & 经营现金流                       & ocf    & 经营活动产生的现金流量净 额/总资产                                                                                \\ \cline{2-4} 
+                                & 净营运资本                       & nwc    & (流动资产-流动负债-现金)/总 资产                                                                               \\ \cline{2-4} 
+                                & 资本投入                        & capex  & \begin{tabular}[c]{@{}l@{}}构建固定资产等长期资产所付现金/总资\\    \\ 产\end{tabular}                              \\ \cline{2-4} 
+                                & 企业成长性                       & grow   & 营业收入增长率                                                                                           \\ \cline{2-4} 
+                                & 股利支付情 况                     & div    & 每股股利/每股净利润                                                                                        \\ \cline{2-4} 
+                                & 两任兼职情 况                     & dual   & \begin{tabular}[c]{@{}l@{}}哑变量，董事长与总经理兼任取 1，否则\\    \\ 取 0\end{tabular}                           \\ \cline{2-4} 
+                                & 股权集中度                       & top1   & 第一大股东持股/总股本                                                                                       \\ \cline{2-4} 
+                                & 董事会规模                       & board  & 期末董事会人数的自然对数                                                                                      \\ \cline{2-4} 
+                                & 独董比例                        & indrat & 期末独立董事人数/期末董事 会人数                                                                                 \\ \hline
+    \end{tabular}
+\end{table}
+
+\section{实证检验结果}
+\subsection{描述性统计}
+表3为各主要变量的描述性统计结果。现金持有cash1（cash2）的均值为7.52（0.22），中位数为2.38（0.14），均值大于中位数表明中国上市公司存在高持现的特征，右偏分布、右侧长拖尾的特征表明样本企业现金持有存在较大差异。
+
+表4汇报了分组描述性统计。被解释变量大多在控制组与处理组、政策实施前与实施后存在显著差异（除去cash2的指标在政策实施前后差异不显著）。
+
+\begin{table}[H]
+    \centering
+    \caption{全样本描述性统计}
+    \begin{tabular}{ccccccccc}
+    \toprule
+    变量     & 平均值   & 标准差    & 最小值    & P25   & P50   & P75   & 最大值    & N     \\ \midrule
+    cash1  & 7.52  & 15.89  & -0.17  & 0.78  & 2.38  & 6.75  & 90.36  & 35500 \\
+    cash2  & 0.22  & 0.25   & -0.01  & 0.07  & 0.14  & 0.27  & 1.28   & 35462 \\
+    cash3  & 0.31  & 0.34   & 0.00   & 0.10  & 0.20  & 0.39  & 2.11   & 35492 \\
+    zcash  & -0.08 & 0.44   & -0.59  & -0.24 & -0.20 & -0.09 & 2.12   & 35492 \\
+    treat  & 0.69  & 0.46   & 0.00   & 0.00  & 1.00  & 1.00  & 1.00   & 36232 \\
+    post   & 0.38  & 0.48   & 0.00   & 0.00  & 0.00  & 1.00  & 1.00   & 36232 \\
+    size   & 21.53 & 1.57   & 18.07  & 20.48 & 21.45 & 22.47 & 25.80  & 33643 \\
+    lev    & 0.43  & 1.02   & 0.06   & 0.26  & 0.41  & 0.56  & 0.91   & 33643 \\
+    ocf    & 0.06  & 0.11   & -0.17  & 0.02  & 0.06  & 0.11  & 0.32   & 33614 \\
+    nwc    & 0.08  & 0.85   & -0.46  & -0.05 & 0.08  & 0.11  & 0.60   & 33605 \\
+    capex  & 0.05  & 0.05   & 0.00   & 0.02  & 0.04  & 0.07  & 0.25   & 33558 \\
+    grow   & 24.44 & 305.95 & -51.18 & -0.56 & 11.13 & 26.32 & 186.58 & 32580 \\
+    div    & 0.25  & 1.11   & -0.01  & 0.09  & 0.18  & 0.31  & 1.57   & 17883 \\
+    top1   & 36.97 & 17.22  & 9.00   & 24.00 & 34.29 & 47.46 & 90     & 28340 \\
+    board  & 2.03  & 0.39   & 0.00   & 1.95  & 2.20  & 2.20  & 2.64   & 30197 \\
+    indrat & 0.34  & 0.12   & 0.00   & 0.33  & 0.33  & 0.43  & 0.57   & 30197 \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{分组描述性统计}
+    \begin{tabular}{ccccccccc}
+    \hline
+    \multicolumn{9}{l}{A：控制组与处理组对比}                                                               \\ \toprule
+          & \multicolumn{2}{c}{控制组} &  & \multicolumn{2}{c}{处理组} &  & \multicolumn{2}{c}{控制组-处理组} \\ \cline{2-3} \cline{5-6} \cline{8-9} 
+          & N          & Mean       &  & N          & Mean       &  & Mean          & t值          \\ \hline
+    cash1 & 11049      & 10.69      &  & 24451      & 6.09       &  & 4.60***       & 25.48       \\
+    cash2 & 11182      & 0.20       &  & 24280      & 0.23       &  & -0.03***      & -11.63      \\
+    cash3 & 11182      & 0.27       &  & 24310      & 0.33       &  & -0.05***      & -13.60      \\
+    zcash & 10993      & -0.06      &  & 24499      & -0.09      &  & 0.02***       & 4.92        \\ \hline
+    \multicolumn{9}{l}{B：政策实施前后对比}                                                                \\ \hline
+          & \multicolumn{2}{c}{实施前} &  & \multicolumn{2}{c}{实施后} &  & \multicolumn{2}{c}{实施前-实施后} \\ \cline{2-3} \cline{5-6} \cline{8-9} 
+          & N          & Mean       &  & N          & Mean       &  & Mean          & t值          \\ \hline
+    cash1 & 22079      & 6.33       &  & 13421      & 9.49       &  & -3.16***      & -18.25      \\
+    cash2 & 21997      & 0.22       &  & 13465      & 0.22       &  & 0.00          & 1.00        \\
+    cash3 & 22034      & 0.31       &  & 13458      & 0.32       &  & -0.01***      & -3.41       \\
+    zcash & 22104      & -0.09      &  & 13388      & -0.07      &  & -0.02***      & -3.78       \\ \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+        \item ***表示在1\%的水平下显著；**表示在5\%的水平下显著；*表示在10\%的水平下显著。
+    \end{tablenotes}
+    
+\end{table}
+
+\subsection{基准回归检验}
+基准回归结果如下表所示，留底退税政策（$treat \times post$）的系数显著为负，即相比于为受留抵退税政策影响的企业，受留抵退税政策影响的企业在政策实施前后显著降低了现金持有。
+
+
+\begin{table}[H]
+    \centering
+    \caption{基准回归结果}
+    \begin{tabular}{@{}lllll@{}}
+    \toprule
+                 & (1)       & (2)      & (3)      & (4)       \\ \cmidrule(l){2-5} 
+    VARIABLES    & Cash1     & Cash2    & Cash3    & Zcash     \\ \midrule
+    Treat×Post   & -1.461*** & -0.012** & -0.019** & 0.009     \\
+                 & (-4.33)   & (-2.05)  & (-2.41)  & (1.06)    \\
+    Constant     & 7.901***  & 0.223*** & 0.315*** & -0.085*** \\
+                 & (89.81)   & (151.98) & (155.45) & (-37.32)  \\
+    Observations & 35,499    & 35,458   & 35,489   & 35,488    \\
+    $R^2$    & 0.801     & 0.564    & 0.564    & 0.785     \\ \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+        \item Notes:\\
+        1. accuracy，使用sklearn中accuracy\_score函数计算，反应预测得到的label和真实label比较的准确率；\\
+        2. AUC（Area under the Curve of ROC），计算曲线ROC的面积，0.5 < AUC < 1，优于随机猜测，即这个分类器（模型）妥善设置阈值的话，能有预测价值。
+    \end{tablenotes}
+\end{table}
+
+\section{平行趋势检验及稳健性检验}
+\subsection{平行趋势检验} 
+为了进一步支持平行趋势的假设，我们报告了改革前几年受处理和未受处理企业之间主要结果变量的前趋势结果。这些回归中的因变量是2018年以前公司的现金现金持有，我们将其回归到treat指标上。在政策开始之前，受处理的公司有显著的增加现金持有的趋势，这一前期趋势与政策开始之后减少现金持有的趋势相反。
+
+\begin{table}[H]
+    \centering
+    \caption{平行趋势检验}
+    \begin{tabular}{@{}lcccc@{}}
+    \toprule
+                 & (1)         & (2)       & (3)       & (4)       \\ \cmidrule(l){2-5} 
+    VARIABLES    & Cash1       & Cash2     & Cash3     & Zcash     \\ \midrule
+    Treat        & 1.124***    & 0.025***  & 0.060***  & 0.143***  \\
+                 & (3.71)      & (5.64)    & (8.93)    & (13.87)   \\
+    size         & 10.971***   & -0.027*** & -0.003    & 0.283***  \\
+                 & (42.66)     & (-11.35)  & (-1.04)   & (38.49)   \\
+    lev          & -16.409***  & -0.611*** & -1.150*** & -0.463*** \\
+                 & (-15.06)    & (-29.64)  & (-37.09)  & (-12.19)  \\
+    ocf          & 8.239***    & 0.259***  & -0.433*** & 0.442***  \\
+                 & (4.11)      & (6.71)    & (-8.54)   & (6.39)    \\
+    nwc          & -6.731***   & -0.448*** & -0.675*** & -0.160*** \\
+                 & (-7.12)     & (-25.41)  & (-26.42)  & (-4.91)   \\
+    capex        & -18.609***  & -0.956*** & -0.965*** & -0.396*** \\
+                 & (-6.90)     & (-18.65)  & (-11.98)  & (-4.59)   \\
+    grow         & -0.003*     & -0.000**  & 0.000     & -0.000    \\
+                 & (-1.84)     & (-1.98)   & (0.84)    & (-1.36)   \\
+    div          & 0.020       & -0.001    & -0.002    & 0.001     \\
+                 & (0.31)      & (-1.21)   & (-1.42)   & (0.38)    \\
+    dual         & 0.334       & 0.015***  & 0.032***  & 0.009     \\
+                 & (1.37)      & (2.82)    & (3.90)    & (1.09)    \\
+    top1         & 0.080***    & 0.001***  & -0.000    & 0.002***  \\
+                 & (7.73)      & (5.75)    & (-0.73)   & (5.19)    \\
+    board        & -6.979***   & -0.013    & -0.022    & -0.138*** \\
+                 & (-8.64)     & (-1.02)   & (-1.26)   & (-4.98)   \\
+    indrat       & -21.309***  & 0.128***  & 0.303***  & -0.384*** \\
+                 & (-10.30)    & (3.35)    & (7.03)    & (-5.98)   \\
+    Constant     & -204.605*** & 1.074***  & 0.912***  & -5.732*** \\
+                 & (-41.74)    & (20.31)   & (13.72)   & (-40.20)  \\
+    Observations & 9,768       & 9,852     & 9,848     & 9,724     \\
+    $R^2$    & 0.470       & 0.225     & 0.228     & 0.349     \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+\subsection{稳健性检验：增加控制变量}
+在基础回归的模型基础上，我们增加了一系列控制变量，依次选取企业规模(size)、财务杠杆(lev)、经营现金流(ocf)、净营运资本(nwc)、资本投入(capex)、企业成长性(grow)、股利支付率(div)、两职兼任情况(dual)、股权集中度(top1)、董事会规模(board)以及独董比例(indrat)加入回归模型中。我们发现，在加入这一系列变量之后，结论变得更加显著。
+
+\begin{table}[H]
+    \centering
+    \caption{稳健性检验：增加控制变量}
+    \begin{tabular}{lcccc}
+    \toprule
+                 & (1)         & (2)       & (3)       & (4)       \\ \cmidrule(l){2-5} 
+    VARIABLES    & Cash1       & Cash2     & Cash3     & Zcash     \\ \midrule
+    Treat×Post   & -2.887***   & -0.032*** & -0.070*** & -0.028**  \\
+                 & (-5.55)     & (-4.89)   & (-7.29)   & (-2.13)   \\
+    size         & 12.132***   & 0.004     & 0.062***  & 0.346***  \\
+                 & (16.52)     & (0.60)    & (5.76)    & (18.92)   \\
+    lev          & -30.725***  & -0.984*** & -1.332*** & -0.838*** \\
+                 & (-15.66)    & (-28.53)  & (-26.88)  & (-15.25)  \\
+    ocf          & 5.902***    & 0.167***  & -0.131*** & 0.181***  \\
+                 & (4.09)      & (6.06)    & (-3.11)   & (4.27)    \\
+    nwc          & -17.638***  & -0.896*** & -1.082*** & -0.509*** \\
+                 & (-13.26)    & (-29.04)  & (-26.42)  & (-12.92)  \\
+    capex        & -4.807      & -0.532*** & -0.464*** & -0.194**  \\
+                 & (-1.42)     & (-11.52)  & (-6.98)   & (-2.31)   \\
+    grow         & -0.002      & -0.000**  & -0.000    & -0.000    \\
+                 & (-1.59)     & (-2.19)   & (-1.34)   & (-1.05)   \\
+    div          & 0.011       & -0.001    & 0.003**   & 0.002     \\
+                 & (0.35)      & (-0.80)   & (2.36)    & (1.45)    \\
+    o.dual       & -           & -         & -         & -         \\
+                 &             &           &           &           \\
+    top1         & 0.174***    & 0.001***  & 0.001**   & 0.002**   \\
+                 & (4.65)      & (2.69)    & (2.19)    & (2.50)    \\
+    board        & -0.708      & 0.020     & 0.005     & -0.024    \\
+                 & (-0.59)     & (1.21)    & (0.21)    & (-0.73)   \\
+    indrat       & -6.344**    & 0.044     & 0.081     & -0.113    \\
+                 & (-2.31)     & (1.07)    & (1.37)    & (-1.38)   \\
+    Constant     & -244.420*** & 0.541***  & -0.428*   & -7.244*** \\
+                 & (-14.87)    & (3.63)    & (-1.78)   & (-17.45)  \\
+                 &             &           &           &           \\
+    Observations & 17,055      & 17,241    & 17,234    & 17,025    \\
+    $R^2$    & 0.857       & 0.743     & 0.736     & 0.850     \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{结论}
+原文研究表明，全球公司存在一定的“囤积”现金的现象，并以韩国样本探讨了如果企业保留较少的现金并在股息、工资或新投资上支出更多时，这些资金是否可以投入到更具生产力的用途，以及市场对此做出的反应。
+
+原文通过利用韩国一项对现金留存征收新税来遏制公司现金积累的税收改革，来构造自然实验调查该问题。研究结果显示，平均而言，受改革影响的企业减少了现金留存，并在股息、工资增长和投资上支出更多。在判断保留较少现金是否为更优决策时，需要考虑改革前受影响企业的现金及投资政策是否已经处于最优状态，以及现金留存替代用途的支出效益如何。原文研究结果表明，改革后的市场对此的反应是积极的（体现在企业估值的提高），这意 味着投资者预期企业的回应行为足够提高价值，以抵消因支付更高税收而产生的任何直接负面估值后果。这些结果与改革前企业现金留存过多的假设相一致。
+
+在机制分析层面，原文从行为偏差和代理冲突来进行解释。从行为偏差角度来说，经历过金融危机的企业管理者倾向于在改革前持有更多现金，但这些企业在改革发生后也通过大幅削减现金留存作出了更强烈的回应，投资者的反应也更积极。从代理冲突的视角来看，改革前治理较弱的企业往往持有较多现金。然而，在改革之后，这些治理不佳的企业并未增加股息支付。相反，它们更倾向于将留存的现金分配给投资，导致相对较低的估值，这一现象与帝国建设理论相符。因此，一个重要的启示是，使用政策杠杆来阻止企业保留过多的现金并非一定有效，因为具体企业的价值影响将取决于企业之所以保留如此多现金的原因以及它们如何将这些资金分配给替代用途。
+\end{document}
